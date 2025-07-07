@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./static/index.css">
+  <title>rvur | Portfolio</title>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+        <img style="width: 200px; border-radius: 50%;" src="https://avatars.githubusercontent.com/u/183135953?v=4" alt="profile picture">
+      <h1>rvur</h1>
+            <div class="spotify-widget" id="spotify-widget" style="display: none;">
+        <img id="album-art" src="" alt="Album Art">
+        <div class="spotify-info">
+          <h4 id="song-title">Song Title</h4>
+          <p id="artist-name">Artist</p>
+          <div class="progress-bar">
+            <div id="progress" class="progress"></div>
+          </div>
+          <div class="time-info">
+            <span id="current-time">0:00</span>
+            <span id="total-time">0:00</span>
+          </div>
+        </div>
+      </div>
+      <p style="margin-bottom: 1rem;">Security-focused developer | Reverse engineering | Full-stack enthusiast</p>
+
+      <section id="stack">
+        <img src="https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite">
+        <img src="https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white" alt="mySQL">
+        <img src="https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white" alt="Flask">
+        <img src="https://img.shields.io/badge/jinja-white.svg?style=for-the-badge&logo=jinja&logoColor=black" alt="Jinja">
+        <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python">
+        <img src="https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java">
+        <img src="https://img.shields.io/badge/javafx-%23FF0000.svg?style=for-the-badge&logo=javafx&logoColor=white" alt="JavaFx">
+        <img src="https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white" alt="C Programming Language">
+        <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="JavaScript">
+        <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
+        <img src="https://img.shields.io/badge/Kali-268BEE?style=for-the-badge&logo=kalilinux&logoColor=white" alt="Kali">
+
+    </section>  
+    
+    </header>
+    
+    <section class="projects">
+        
+      <div class="project-card">
+        <h3>AV-CLI</h3>
+        <p>A CLI tool that analyzes PE files using YARA rules, entropy, VirusTotal integration, and stores data in SQLite.</p>
+        <a href="https://github.com/met2001/av-cli" target="_blank">GitHub →</a>
+      </div>
+      <div class="project-card">
+        <h3>DLL Injector</h3>
+        <p>GUI tool to inject DLLs into Windows processes using remote thread injection.</p>
+        <a href="https://github.com/met2001/dll-injector-poc-" target="_blank">GitHub →</a>
+      </div>
+      <div class="project-card">
+        <h3>Shellcode Loader</h3>
+        <p>A stealthy shellcode loader using XOR encoding, fiber execution, and registry persistence.</p>
+        <a href="https://github.com/met2001/shellcode-loader" target="_blank">GitHub →</a>
+      </div>
+      <div class="project-card">
+        <h3>Fileshare</h3>
+        <p>Flask-based web application that allows users to register, upload files, create posts, and comment via replies.</p>
+        <a href="https://github.com/met2001/Fileshare" target="_blank">GitHub →</a>
+      </div>
+      <div class="project-card">
+        <h3>Nekoblogs</h3>
+        <p>A passion project aimed towards creation and management of microblogs with a free API to access posts.</p>
+        <a href="https://github.com/met2001/nekoblogs" target="_blank">GitHub →</a>
+      </div>
+      <div class="project-card">
+        <h3>Car Game</h3>
+        <p>Small car game written in Java with a GUI made using JavaFX. School project to showcase familiarity with Java.</p>
+        <a href="https://github.com/met2001/car-game" target="_blank">GitHub →</a>
+      </div>
+    </section>
+
+    <footer>
+      &copy; 2025 rvur
+    </footer>
+  </div>
+ <script src="js/music.js"></script>
+</body>
+</html>
