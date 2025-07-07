@@ -33,7 +33,7 @@ function msToTime(ms) {
         currentTimeEl.textContent = msToTime(current);
         totalTimeEl.textContent = msToTime(total);
       } else {
-        widget.style.display = "none";
+        albumArt.src = "./assets/default.jpeg";
       }
     }
 

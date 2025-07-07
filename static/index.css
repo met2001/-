@@ -21,6 +21,7 @@
       align-items: center;
       min-height: 100vh;
       padding: 2rem;
+      transition: background-color 0.5s ease;
     }
 
     .wrapper {
@@ -163,6 +164,14 @@
 
     .project-card a:hover {
       text-decoration: underline;
+    }
+
+    .tilt-card {
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+    .popout {
+      transform: translateZ(20px);
     }
 
     footer {

@@ -1,21 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./static/index.css">
+  <script src="https://cdn.tailwindcss.com"></script>
   <title>rvur | Portfolio</title>
 </head>
-<body>
+<body id="top">
   <div class="wrapper">
-    <header>
+    <header class="flex flex-col items-center text-center space-y-4 py-8">
         <img style="width: 200px; border-radius: 50%;" src="https://avatars.githubusercontent.com/u/183135953?v=4" alt="profile picture">
-      <h1>rvur</h1>
-            <div class="spotify-widget" id="spotify-widget" style="display: none;">
+      <h1 >rvur</h1>
+       
+      <p style="margin-bottom: 1rem;">Security-focused developer | Reverse engineering | Full-stack enthusiast</p>
+        <div class="spotify-widget" id="spotify-widget">
         <img id="album-art" src="" alt="Album Art">
         <div class="spotify-info">
-          <h4 id="song-title">Song Title</h4>
-          <p id="artist-name">Artist</p>
+          <h4 id="song-title">Not listening to anything</h4>
+          <p id="artist-name">??????</p>
           <div class="progress-bar">
             <div id="progress" class="progress"></div>
           </div>
@@ -25,8 +28,6 @@
           </div>
         </div>
       </div>
-      <p style="margin-bottom: 1rem;">Security-focused developer | Reverse engineering | Full-stack enthusiast</p>
-
       <section id="stack">
         <img src="https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite">
         <img src="https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white" alt="mySQL">
@@ -77,11 +78,71 @@
         <a href="https://github.com/met2001/car-game" target="_blank">GitHub →</a>
       </div>
     </section>
+    
+    <div class="flex flex-col items-center justify-center py-12 space-y-2">
+  <p class="text-gray-400 text-lg">Check what I'm up to</p>
+    <a href="#widget-section" class="animate-bounce text-3xl text-gray-400 hover:text-white transition">
+     ↓
+    </a>
+    </div>
 
+    <section id="widget-section" class="h-screen flex flex-col items-center justify-center" style="height: 100vh; width: 100%;">
+   <a href="#top" class="animate-bounce text-3xl text-gray-400 hover:text-white transition mb-6" aria-label="Back to top">
+    ↑
+  </a>
+        <div data-tilt class="tilt-card bg-zinc-800 rounded-2xl shadow-xl p-6 max-w-md w-full space-y-4" id="widget">
+    <!-- Widget content will be injected here -->
+  </div>
+    </section>
     <footer>
       &copy; 2025 rvur
     </footer>
   </div>
+  <script>
+  let lastScrollTop = 0;
+  const body = document.body;
+  const section = document.getElementById('widget-section');
+
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    // Get the position where the widget section starts
+    const sectionTop = section.offsetTop;
+
+    if (scrollTop >= sectionTop) {
+      // We're at or past the widget section — set bg to bg-zinc-900 (#18181b)
+      body.style.backgroundColor = '#18181b'; // Tailwind bg-zinc-900 hex
+    } else {
+      // Before widget section — reset background to original (adjust as needed)
+      body.style.backgroundColor = ''; // removes inline style, fallback to default
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  });
+
+  // Bonus: also change bg on clicking the arrow link smoothly
+
+  document.querySelector('a[href="#widget-section"]').addEventListener('click', (e) => {
+    e.preventDefault();
+    document.querySelector('#widget-section').scrollIntoView({ behavior: 'smooth' });
+    body.style.backgroundColor = '#18181b';
+  });
+</script>
  <script src="js/music.js"></script>
+<script src="js/discord.js"></script>
+ <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
+ <script>
+  $(document).ready(() => {
+    $("[data-tilt]").tilt({
+      maxTilt: 15,
+      perspective: 800,
+      scale: 1.04,
+      speed: 400,
+      glare: true,
+      "max-glare": 1.2
+    });
+  });
+</script>
 </body>
 </html>
