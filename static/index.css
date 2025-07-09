@@ -22,6 +22,11 @@
       min-height: 100vh;
       padding: 2rem;
       transition: background-color 0.5s ease;
+
+      
+      height: auto;                    /* NEW: Fixed viewport height */
+      overflow-y: scroll;               /* NEW: Enable scrolling */
+      scroll-snap-type: y mandatory;
     }
 
     .wrapper {
@@ -137,12 +142,15 @@
       padding: 1.5rem;
       border-radius: 12px;
       transition: transform 0.4s ease, box-shadow 0.4s ease;
+      transform: scale(1);
       border: 1px solid #222;
     }
 
     .project-card:hover {
       transform: translateY(-10px) scale(1.02);
       box-shadow: 0 5px 20px var(--shadow-color);
+      border-color: var(--accent-color);
+      background-color: rgba(97, 218, 251, 0.1);
     }
 
     .project-card h3 {
@@ -173,6 +181,82 @@
     .popout {
       transform: translateZ(20px);
     }
+   .snap-container {
+      height: 100vh;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+    }
+    
+    .snap-section {
+      min-height: 100vh;         /* Each section fills viewport */
+      scroll-snap-align: start;  /* Snap to top of section */
+      scroll-snap-stop: always;  /* Force stop at each section */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+    /* Technology badges */
+    .tech-badge {
+      height: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      filter: brightness(1);
+      position: relative;
+    }
+
+.tech-badge:hover {
+  transform: scale(1.1);
+  filter: brightness(1.3) drop-shadow(0 0 10px rgba(97, 218, 251, 0.6));
+}
+
+.tech-badge.active {
+  transform: scale(1.15);
+  filter: brightness(1.4) drop-shadow(0 0 15px rgba(97, 218, 251, 0.8));
+}
+
+/* Project card highlighting */
+.project-card.highlighted {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(97, 218, 251, 0.6);
+  border-color: var(--accent-color);
+  background-color: rgba(97, 218, 251, 0.1);
+  animation: pulse 2s infinite;
+}
+
+.project-card.dimmed {
+  opacity: 0.3;
+  transform: scale(0.95);
+}
+  @keyframes connectionLine {
+  0% { width: 0; opacity: 0; }
+  50% { opacity: 1; }
+  100% { width: 100%; opacity: 0; }
+}
+
+.tech-badge.active::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  background: var(--accent-color);
+  animation: connectionLine 1s ease-out;
+}
+.tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .tech-tag {
+      background: rgba(97, 218, 251, 0.2);
+      color: var(--accent-color);
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      border: 1px solid rgba(97, 218, 251, 0.3);
+    }
 
     footer {
       margin-top: 2rem;
@@ -200,3 +284,8 @@
         font-size: 0.95rem;
       }
     }
+    @media (max-width: 768px) {
+  body {
+    scroll-snap-type: none;  /* Disable on mobile for better UX */
+  }
+}

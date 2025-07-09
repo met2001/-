@@ -23,7 +23,7 @@ async function fetchPresence() {
         `).join("");
 
       document.getElementById("widget").innerHTML = `
-        <div class="flex items-center space-x-5 popout">
+        <div class="flex items-center space-x-5 popout snap-center">
           <img src="${avatarUrl}" alt="Avatar" class="w-16 h-16 rounded-full border-2 border-white">
           <div>
             <div class="flex items-center space-x-2">

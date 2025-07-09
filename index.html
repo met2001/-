@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth snap-proximity">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,6 +8,7 @@
   <title>rvur | Portfolio</title>
 </head>
 <body id="top">
+  <section class="snap-section">
   <div class="wrapper">
     <header class="flex flex-col items-center text-center space-y-4 py-8">
         <img style="width: 200px; border-radius: 50%;" src="https://avatars.githubusercontent.com/u/183135953?v=4" alt="profile picture">
@@ -29,17 +30,17 @@
         </div>
       </div>
       <section id="stack">
-        <img src="https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite">
-        <img src="https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white" alt="mySQL">
-        <img src="https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white" alt="Flask">
-        <img src="https://img.shields.io/badge/jinja-white.svg?style=for-the-badge&logo=jinja&logoColor=black" alt="Jinja">
-        <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python">
-        <img src="https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java">
-        <img src="https://img.shields.io/badge/javafx-%23FF0000.svg?style=for-the-badge&logo=javafx&logoColor=white" alt="JavaFx">
-        <img src="https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white" alt="C Programming Language">
-        <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="JavaScript">
-        <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
-        <img src="https://img.shields.io/badge/Kali-268BEE?style=for-the-badge&logo=kalilinux&logoColor=white" alt="Kali">
+        <img class="tech-badge" data-tech="sqlite" src="https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite">
+        <img class="tech-badge" data-tech="mysql" src="https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white" alt="mySQL">
+        <img class="tech-badge" data-tech="flask" src="https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white" alt="Flask">
+        <img class="tech-badge" data-tech="jinja" src="https://img.shields.io/badge/jinja-white.svg?style=for-the-badge&logo=jinja&logoColor=black" alt="Jinja">
+        <img class="tech-badge" data-tech="python" src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python">
+        <img class="tech-badge" data-tech="java" src="https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java">
+        <img class="tech-badge" data-tech="javafx" src="https://img.shields.io/badge/javafx-%23FF0000.svg?style=for-the-badge&logo=javafx&logoColor=white" alt="JavaFx">
+        <img class="tech-badge" data-tech="C" src="https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white" alt="C Programming Language">
+        <img class="tech-badge" data-tech="js" src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="JavaScript">
+        <img class="tech-badge" data-tech="html" src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
+        <img class="tech-badge" data-tech="kali" src="https://img.shields.io/badge/Kali-268BEE?style=for-the-badge&logo=kalilinux&logoColor=white" alt="Kali">
 
     </section>  
     
@@ -47,34 +48,69 @@
     
     <section class="projects">
         
-      <div class="project-card">
+      <div class="project-card" data-techs="C, python, sqlite">
         <h3>AV-CLI</h3>
         <p>A CLI tool that analyzes PE files using YARA rules, entropy, VirusTotal integration, and stores data in SQLite.</p>
+        <div class="tech-tags">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">C</span>
+          <span class="tech-tag">SQLite</span>
+          <span class="tech-tag">VirusTotal API</span>
+          <span class="tech-tag">Win API</span>
+          <span class="tech-tag">YARA</span>
+        </div>
         <a href="https://github.com/met2001/av-cli" target="_blank">GitHub →</a>
       </div>
-      <div class="project-card">
+      <div class="project-card" data-techs="C">
         <h3>DLL Injector</h3>
         <p>GUI tool to inject DLLs into Windows processes using remote thread injection.</p>
+        <div class="tech-tags">  
+          <span class="tech-tag">C</span>
+          <span class="tech-tag">Win API</span>
+        </div>
         <a href="https://github.com/met2001/dll-injector-poc-" target="_blank">GitHub →</a>
       </div>
-      <div class="project-card">
+      <div class="project-card" data-techs="C, kali">
         <h3>Shellcode Loader</h3>
         <p>A stealthy shellcode loader using XOR encoding, fiber execution, and registry persistence.</p>
+        <div class="tech-tags">  
+          <span class="tech-tag">C</span>
+          <span class="tech-tag">Win API</span>
+          <span class="tech-tag">Encryption</span>
+        </div>
         <a href="https://github.com/met2001/shellcode-loader" target="_blank">GitHub →</a>
       </div>
-      <div class="project-card">
+      <div class="project-card" data-techs="python,flask,sqlite,html,script, js, jinja">
         <h3>Fileshare</h3>
         <p>Flask-based web application that allows users to register, upload files, create posts, and comment via replies.</p>
+         <div class="tech-tags">  
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">Flask</span>
+          <span class="tech-tag">SQLite</span>
+          <span class="tech-tag">JS</span>
+          <span class="tech-tag">HTML/CSS</span>
+        </div>
         <a href="https://github.com/met2001/Fileshare" target="_blank">GitHub →</a>
       </div>
-      <div class="project-card">
+      <div class="project-card" data-techs="python, html, js, sqlite, jinja, flask">
         <h3>Nekoblogs</h3>
         <p>A passion project aimed towards creation and management of microblogs with a free API to access posts.</p>
+        <div class="tech-tags">  
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">Flask</span>
+          <span class="tech-tag">SQLite</span>
+          <span class="tech-tag">JS</span>
+          <span class="tech-tag">HTML/CSS</span>
+        </div>
         <a href="https://github.com/met2001/nekoblogs" target="_blank">GitHub →</a>
       </div>
-      <div class="project-card">
+      <div class="project-card" data-techs="java, javafx">
         <h3>Car Game</h3>
         <p>Small car game written in Java with a GUI made using JavaFX. School project to showcase familiarity with Java.</p>
+        <div class="tech-tags">  
+          <span class="tech-tag">Java</span>
+          <span class="tech-tag">JavaFX</span>
+        </div>
         <a href="https://github.com/met2001/car-game" target="_blank">GitHub →</a>
       </div>
     </section>
@@ -85,19 +121,19 @@
      ↓
     </a>
     </div>
-
-    <section id="widget-section" class="h-screen flex flex-col items-center justify-center" style="height: 100vh; width: 100%;">
+</div>
+    <section id="widget-section" class="snap-section" style="height: 100vh; width: 100%;">
    <a href="#top" class="animate-bounce text-3xl text-gray-400 hover:text-white transition mb-6" aria-label="Back to top">
     ↑
   </a>
-        <div data-tilt class="tilt-card bg-zinc-800 rounded-2xl shadow-xl p-6 max-w-md w-full space-y-4" id="widget">
+        <div data-tilt class="tilt-card bg-zinc-800 rounded-2xl shadow-xl p-6 max-w-md w-full space-y-4 snap-y snap-mandatory" id="widget">
     <!-- Widget content will be injected here -->
   </div>
     </section>
     <footer>
       &copy; 2025 rvur
     </footer>
-  </div>
+  </section>
   <script>
   let lastScrollTop = 0;
   const body = document.body;
@@ -130,6 +166,7 @@
 </script>
  <script src="js/music.js"></script>
 <script src="js/discord.js"></script>
+<script src="js/techstack.js"></script>
  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
  <script>
